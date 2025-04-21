@@ -108,7 +108,7 @@ jobs:
           comment: Deploy
           command: |
             # 공통 변수
-            IMAGE="ghcr.io/${{ steps.export_owner.outputs.owner_lc }}/${{ steps.export_image.outputs.image_name }}:latest"
+            IMAGE="ghcr.io/${{ needs.buildImageAndPush.outputs.owner_lc }}/${{ needs.buildImageAndPush.outputs.image_name }}:latest"
             VOLUME="/gen:/gen"
             NETWORK="common"
             HEALTH_ENDPOINT="/actuator/health"
